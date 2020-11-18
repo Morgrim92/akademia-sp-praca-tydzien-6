@@ -3,6 +3,7 @@ package pl.morg.pracadomowatydzien6.repository;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Repository;
+import pl.morg.pracadomowatydzien6.aop.MovieAnnotation;
 import pl.morg.pracadomowatydzien6.model.Movie;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class MovieRepository {
         return movies;
     }
 
+    @MovieAnnotation
     public boolean addMovie(Movie movie) {
         return movies.add(movie);
     }
